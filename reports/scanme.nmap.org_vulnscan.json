@@ -1,0 +1,73 @@
+{
+  "target": "scanme.nmap.org",
+  "timestamp": "2026-06-09T15:08:00.525489",
+  "services": [
+    {
+      "port": 22,
+      "service": "SSH",
+      "banner": "SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13",
+      "version": "6.6.1p1",
+      "protocol": "tcp",
+      "open": true
+    },
+    {
+      "port": 80,
+      "service": "HTTP",
+      "banner": "HTTP/1.1 200 OK\r\nDate: Tue, 09 Jun 2026 09:38:06 GMT\r\nServer: Apache/2.4.7 (Ubuntu)\r\nAccept-Ranges: bytes\r\nVary: Accept-Encoding\r\nConnection: close\r\nContent-Type: text/html",
+      "version": "2.4.7",
+      "protocol": "tcp",
+      "open": true
+    }
+  ],
+  "cve_findings": [
+    {
+      "port": 22,
+      "service": "SSH",
+      "version": "6.6.1p1",
+      "cve": "CVE-2016-6515",
+      "cvss": 7.8,
+      "severity": "HIGH",
+      "description": "OpenSSH 6.x \u2014 DoS via crafted authentication requests (auth_password)",
+      "fix": "Upgrade to OpenSSH 8.0+"
+    },
+    {
+      "port": 22,
+      "service": "SSH",
+      "version": "6.6.1p1",
+      "cve": "CVE-2016-0777",
+      "cvss": 6.4,
+      "severity": "MEDIUM",
+      "description": "OpenSSH 6.x \u2014 Roaming feature leaks private key material to malicious server",
+      "fix": "Upgrade to OpenSSH 7.1p2+ or disable UseRoaming"
+    },
+    {
+      "port": 80,
+      "service": "HTTP",
+      "version": "2.4.7",
+      "cve": "CVE-2014-0226",
+      "cvss": 6.8,
+      "severity": "MEDIUM",
+      "description": "Apache 2.4.7 \u2014 Race condition in mod_status enables heap buffer overflow",
+      "fix": "Upgrade to Apache 2.4.10+"
+    },
+    {
+      "port": 80,
+      "service": "HTTP",
+      "version": "2.4.7",
+      "cve": "CVE-2014-0117",
+      "cvss": 4.3,
+      "severity": "MEDIUM",
+      "description": "Apache 2.4.7 \u2014 mod_proxy DoS via crafted HTTP requests",
+      "fix": "Upgrade to Apache 2.4.10+"
+    }
+  ],
+  "credential_tests": {
+    "ssh": {
+      "tested": true,
+      "vulnerable": false,
+      "valid_creds": [],
+      "attempts": 11
+    }
+  },
+  "ssl_checks": {}
+}
