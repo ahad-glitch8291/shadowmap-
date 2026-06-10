@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>shadowmap — scanme.nmap.org</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0d1117; color: #c9d1d9; line-height: 1.6; }
+  header { background: linear-gradient(135deg, #0a3d62, #1a1a2e); padding: 40px; border-bottom: 2px solid #00d2ff; }
+  header h1 { color: #00d2ff; font-size: 2em; font-family: monospace; }
+  header p { color: #8b949e; margin-top: 8px; }
+  .badge { display:inline-block; background:#00d2ff22; color:#00d2ff; border:1px solid #00d2ff44;
+            padding:4px 12px; border-radius:20px; font-size:13px; margin:4px; }
+  main { max-width: 1000px; margin: 0 auto; padding: 32px 16px; }
+  .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px;
+           padding: 24px; margin-bottom: 24px; }
+  .card h2 { color: #58a6ff; margin-bottom: 16px; font-size: 1.2em; }
+  .card h3 { color: #8b949e; margin: 16px 0 8px; font-size: 1em; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { background: #21262d; color: #8b949e; padding: 8px 12px; text-align: left; font-weight: 600; }
+  td { padding: 8px 12px; border-bottom: 1px solid #21262d; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover { background: #1c2128; }
+  code { background: #21262d; padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #79c0ff; }
+  .stat-row { display: flex; gap: 16px; margin-bottom: 16px; }
+  .stat { background: #21262d; padding: 16px; border-radius: 8px; text-align: center; flex: 1; }
+  .stat-num { display: block; font-size: 2em; font-weight: bold; color: #58a6ff; }
+  .muted { color: #484f58; font-style: italic; }
+  .subcard { background: #21262d; border-radius: 8px; padding: 12px; margin-top: 12px; }
+  footer { text-align: center; color: #484f58; padding: 32px; font-size: 13px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🕵️ shadowmap</h1>
+  <p>OSINT &amp; Recon Report</p>
+  <div style="margin-top:16px">
+    <span class="badge">🎯 scanme.nmap.org</span>
+    <span class="badge">📅 2026-06-06 23:07:03</span>
+    <span class="badge">🔧 Modules: dns, whois, subdomains, ports, tech</span>
+  </div>
+</header>
+<main>
+  
+        <div class="card">
+          <h2>🔍 DNS Records</h2>
+          <table><thead><tr><th>Type</th><th>Record</th></tr></thead>
+          <tbody><tr><td><code>A</code></td><td>45.33.32.156</td></tr><tr><td><code>AAAA</code></td><td>2600:3c01::f03c:91ff:fe18:bb2f</td></tr></tbody></table>
+          
+        </div>
+  
+        <div class="card">
+          <h2>📋 WHOIS Intelligence</h2>
+          <table><thead><tr><th>Field</th><th>Value</th></tr></thead>
+          <tbody><tr><td>Registrar</td><td>DYNADOT LLC</td></tr><tr><td>Registrant</td><td>Super Privacy Service LTD c/o Dynadot</td></tr><tr><td>Admin email</td><td>abuse@dynadot.com</td></tr><tr><td>Name servers</td><td>ns1.linode.com, ns2.linode.com, ns3.linode.com</td></tr><tr><td>Created</td><td>1999-01-18 05:00:00+00:00</td></tr><tr><td>Updated</td><td>2026-04-10 17:35:09+00:00</td></tr><tr><td>Expires</td><td>2029-01-18 05:00:00+00:00</td></tr><tr><td>Status</td><td>clientTransferProhibited https://icann.org/epp#clientTransferProhibited</td></tr><tr><td>DNSSEC</td><td>unsigned</td></tr></tbody></table>
+          <div style="color:#27ae60;margin-top:8px">Expires in 956 days</div>
+        </div>
+  
+        <div class="card">
+          <h2>🌐 Subdomain Enumeration</h2>
+          <div class="stat-row">
+            <div class="stat"><span class="stat-num">0</span>Live subdomains</div>
+            <div class="stat"><span class="stat-num">0</span>CT log entries</div>
+          </div>
+          <p class="muted">No live subdomains found</p>
+        </div>
+  
+        <div class="card">
+          <h2>🔌 Open Ports</h2>
+          
+                <h3>scanme.nmap.org</h3>
+                <table><thead><tr><th>Port</th><th>Service</th><th>Risk</th><th>Banner</th></tr></thead>
+                <tbody><tr>
+                  <td><strong>22</strong></td>
+                  <td>SSH</td>
+                  <td><span style="background:#f39c12;color:white;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:bold">MEDIUM</span></td>
+                  <td style="font-size:12px;color:#888">SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13</td>
+                </tr><tr>
+                  <td><strong>80</strong></td>
+                  <td>HTTP</td>
+                  <td><span style="background:#27ae60;color:white;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:bold">LOW</span></td>
+                  <td style="font-size:12px;color:#888">HTTP/1.1 200 OK</td>
+                </tr></tbody></table>
+        </div>
+  
+        <div class="card">
+          <h2>⚙️ Technology Stack</h2>
+          <div style="margin:12px 0"><span style="background:#2c3e50;color:#ecf0f1;padding:4px 12px;border-radius:20px;margin:4px;display:inline-block">Apache 2.4.7</span></div>
+          <h3>Security Header Audit</h3>
+          <table><thead><tr><th></th><th>Header</th><th>Status</th></tr></thead>
+          <tbody><tr><td>❌</td><td>Strict-Transport-Security</td><td style="color:#e74c3c">Missing</td></tr><tr><td>❌</td><td>Content-Security-Policy</td><td style="color:#e74c3c">Missing</td></tr><tr><td>❌</td><td>X-Frame-Options</td><td style="color:#e74c3c">Missing</td></tr><tr><td>❌</td><td>X-Content-Type-Options</td><td style="color:#e74c3c">Missing</td></tr><tr><td>❌</td><td>Referrer-Policy</td><td style="color:#e74c3c">Missing</td></tr><tr><td>❌</td><td>Permissions-Policy</td><td style="color:#e74c3c">Missing</td></tr><tr><td>❌</td><td>X-XSS-Protection</td><td style="color:#e74c3c">Missing</td></tr></tbody></table>
+          <div style="margin-top:8px;color:#e74c3c">⚠ 7 missing security headers</div>
+        </div>
+</main>
+<footer>
+  Generated by shadowmap | For authorized security testing only<br>
+  <span style="color:#30363d">Raw JSON also saved alongside this report</span>
+</footer>
+</body>
+</html>

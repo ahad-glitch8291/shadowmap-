@@ -1,0 +1,89 @@
+{
+  "domain": "scanme.nmap.org",
+  "timestamp": "2026-06-06T23:06:52.310368",
+  "modules": {
+    "dns": {
+      "A": [
+        "45.33.32.156"
+      ],
+      "AAAA": [
+        "2600:3c01::f03c:91ff:fe18:bb2f"
+      ],
+      "MX": [],
+      "NS": [],
+      "TXT": [],
+      "CNAME": [],
+      "SOA": [],
+      "ips_found": [
+        "45.33.32.156"
+      ],
+      "txt_analysis": []
+    },
+    "whois": {
+      "Registrar": "DYNADOT LLC",
+      "Registrant": "Super Privacy Service LTD c/o Dynadot",
+      "Admin email": "abuse@dynadot.com",
+      "Name servers": "ns1.linode.com, ns2.linode.com, ns3.linode.com",
+      "Created": "1999-01-18 05:00:00+00:00",
+      "Updated": "2026-04-10 17:35:09+00:00",
+      "Expires": "2029-01-18 05:00:00+00:00",
+      "Status": "clientTransferProhibited https://icann.org/epp#clientTransferProhibited",
+      "DNSSEC": "unsigned",
+      "days_until_expiry": 956
+    },
+    "subdomains": {
+      "found": {},
+      "live": [],
+      "ct_only": [],
+      "brute_only": [],
+      "ct_discovered": [],
+      "total": 0
+    },
+    "ports": {
+      "scanme.nmap.org": [
+        {
+          "port": 22,
+          "service": "SSH",
+          "banner": "SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13",
+          "risk": "MEDIUM"
+        },
+        {
+          "port": 80,
+          "service": "HTTP",
+          "banner": "HTTP/1.1 200 OK",
+          "risk": "LOW"
+        }
+      ]
+    },
+    "tech": {
+      "technologies": {
+        "Apache": "2.4.7"
+      },
+      "security_headers": {
+        "present": [],
+        "missing": [
+          "Strict-Transport-Security",
+          "Content-Security-Policy",
+          "X-Frame-Options",
+          "X-Content-Type-Options",
+          "Referrer-Policy",
+          "Permissions-Policy",
+          "X-XSS-Protection"
+        ]
+      },
+      "raw_headers": {
+        "Date": "Sat, 06 Jun 2026 17:37:03 GMT",
+        "Server": "Apache/2.4.7 (Ubuntu)",
+        "Accept-Ranges": "bytes",
+        "Vary": "Accept-Encoding",
+        "Content-Encoding": "gzip",
+        "Content-Length": "2068",
+        "Keep-Alive": "timeout=5, max=100",
+        "Connection": "Keep-Alive",
+        "Content-Type": "text/html"
+      },
+      "final_url": "http://scanme.nmap.org/",
+      "status_code": 200
+    }
+  }
+}
