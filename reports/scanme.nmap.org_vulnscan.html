@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>vulnscan — scanme.nmap.org</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#0d1117;color:#c9d1d9;line-height:1.6}
+  header{background:linear-gradient(135deg,#1a0a0a,#1a1a2e);padding:40px;border-bottom:3px solid #e67e22}
+  header h1{color:#e67e22;font-size:2em;font-family:monospace}
+  header p{color:#8b949e;margin-top:8px}
+  .risk-badge{display:inline-block;background:#e67e22;color:white;padding:6px 18px;
+              border-radius:6px;font-weight:bold;margin-top:12px;font-size:1.1em}
+  main{max-width:1100px;margin:0 auto;padding:32px 16px}
+  .card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;margin-bottom:24px}
+  .card h2{color:#58a6ff;margin-bottom:16px;font-size:1.2em}
+  .stats{display:flex;gap:16px;margin-bottom:24px}
+  .stat{flex:1;background:#161b22;border:1px solid #30363d;border-radius:12px;
+         padding:20px;text-align:center}
+  .stat-num{font-size:2.5em;font-weight:bold;display:block}
+  .stat-label{color:#8b949e;font-size:13px;margin-top:4px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{background:#21262d;color:#8b949e;padding:10px 12px;text-align:left;font-weight:600}
+  td{padding:10px 12px;border-bottom:1px solid #21262d;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  tr:hover{background:#1c2128}
+  code{background:#21262d;padding:2px 6px;border-radius:4px;font-family:monospace;color:#79c0ff}
+  .badge{display:inline-block;background:#21262d;color:#c9d1d9;padding:3px 10px;
+          border-radius:20px;font-size:12px;margin:3px}
+  footer{text-align:center;color:#484f58;padding:32px;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+  <h1>🔍 vulnscan</h1>
+  <p>Network Vulnerability Assessment Report</p>
+  <div style="margin-top:12px">
+    <span class="badge">🎯 scanme.nmap.org</span>
+    <span class="badge">📅 2026-06-09 15:09:52</span>
+    <span class="badge">🔎 2 services</span>
+    <span class="badge">⚠ 4 findings</span>
+  </div>
+  <div class="risk-badge">Overall Risk: HIGH RISK</div>
+</header>
+<main>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-num" style="color:#e74c3c">0</span>
+      <div class="stat-label">Critical</div>
+    </div>
+    <div class="stat">
+      <span class="stat-num" style="color:#e67e22">1</span>
+      <div class="stat-label">High</div>
+    </div>
+    <div class="stat">
+      <span class="stat-num" style="color:#f1c40f">3</span>
+      <div class="stat-label">Medium</div>
+    </div>
+    <div class="stat">
+      <span class="stat-num" style="color:#2ecc71">0</span>
+      <div class="stat-label">Low</div>
+    </div>
+    <div class="stat">
+      <span class="stat-num" style="color:#58a6ff">2</span>
+      <div class="stat-label">Open Services</div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="card">
+    <h2>🔌 Discovered Services</h2>
+    <table>
+      <thead><tr><th>Port</th><th>Service</th><th>Version</th><th>Banner</th></tr></thead>
+      <tbody><tr>
+            <td><strong>22</strong></td>
+            <td>SSH</td>
+            <td><code>6.6.1p1</code></td>
+            <td style="font-size:12px;color:#8b949e">SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13</td>
+        </tr><tr>
+            <td><strong>80</strong></td>
+            <td>HTTP</td>
+            <td><code>2.4.7</code></td>
+            <td style="font-size:12px;color:#8b949e">HTTP/1.1 200 OK
+Date: Tue, 09 Jun 2026 09:38:06 GMT
+Server</td>
+        </tr></tbody>
+    </table>
+  </div>
+
+  <!-- Findings -->
+  <div class="card">
+    <h2>⚠️ Vulnerability Findings</h2>
+    <table>
+      <thead><tr><th>Severity</th><th>Port/Service</th><th>CVE</th><th>CVSS</th><th>Description</th><th>Remediation</th></tr></thead>
+      <tbody><tr>
+            <td><span style="background:#e67e22;color:#fff;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:bold">HIGH</span></td>
+            <td>22/SSH</td>
+            <td><code style="color:#79c0ff">CVE-2016-6515</code></td>
+            <td>7.8</td>
+            <td>OpenSSH 6.x — DoS via crafted authentication requests (auth_password)</td>
+            <td style="color:#2ecc71;font-size:12px">Upgrade to OpenSSH 8.0+</td>
+        </tr><tr>
+            <td><span style="background:#f1c40f;color:#000;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:bold">MEDIUM</span></td>
+            <td>22/SSH</td>
+            <td><code style="color:#79c0ff">CVE-2016-0777</code></td>
+            <td>6.4</td>
+            <td>OpenSSH 6.x — Roaming feature leaks private key material to malicious server</td>
+            <td style="color:#2ecc71;font-size:12px">Upgrade to OpenSSH 7.1p2+ or disable UseRoaming</td>
+        </tr><tr>
+            <td><span style="background:#f1c40f;color:#000;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:bold">MEDIUM</span></td>
+            <td>80/HTTP</td>
+            <td><code style="color:#79c0ff">CVE-2014-0226</code></td>
+            <td>6.8</td>
+            <td>Apache 2.4.7 — Race condition in mod_status enables heap buffer overflow</td>
+            <td style="color:#2ecc71;font-size:12px">Upgrade to Apache 2.4.10+</td>
+        </tr><tr>
+            <td><span style="background:#f1c40f;color:#000;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:bold">MEDIUM</span></td>
+            <td>80/HTTP</td>
+            <td><code style="color:#79c0ff">CVE-2014-0117</code></td>
+            <td>4.3</td>
+            <td>Apache 2.4.7 — mod_proxy DoS via crafted HTTP requests</td>
+            <td style="color:#2ecc71;font-size:12px">Upgrade to Apache 2.4.10+</td>
+        </tr></tbody>
+    </table>
+  </div>
+
+</main>
+<footer>
+  Generated by vulnscan | For authorized security testing only<br>
+  <span style="color:#30363d">Phase 2 — Cybersecurity Learning Project</span>
+</footer>
+</body>
+</html>
